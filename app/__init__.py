@@ -4,6 +4,7 @@ import pyrebase
 
 
 app = Flask(__name__)
+app.secret_key = 'scret'
 
 
 firebaseConfig = {
@@ -20,8 +21,10 @@ firebaseConfig = {
 firebase = pyrebase.initialize_app(firebaseConfig)
 
 auth = firebase.auth()
-
+db = firebase.database()
 
 
 from app import views
 from app import signup
+from app import login
+from app import logout

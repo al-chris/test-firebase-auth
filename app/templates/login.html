@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-    <h1>Login</h1>
-    <form method="POST" action="{{ url_for('login') }}">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
+<body class="bg-light">
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Login</h1>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+                <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a>.</p>
+            </div>
+        </div>
+    </div>
 
-        <button type="submit">Login</button>
-    </form>
-
-    <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a>.</p>
 </body>
 </html>
+

@@ -16,11 +16,12 @@ def signup():
             )
 
             # Store user information in the session
-            session['user'] = {'email': user.email, 'uid': user.uid}
+            session['user'] = {'email': user['email'], 'uid': user['localId']}
 
             return redirect(url_for('home'))
 
-        except auth.AuthError as e:
-            return f'Signup failed: {e}'
+        except Exception as e:
+            print(e)
+            return 'Signup failed.'
 
     return render_template('signup.html')  # Create an HTML template for the signup form
