@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}}">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Oops! Something went wrong.</h1>
+                <p class="text-center">We're sorry, but an unexpected error occurred.</p>
+                <p class="text-center">Please try again later or contact support.</p>
+                <a href="{{ url_for('home') }}" class="btn btn-primary btn-block">Go to Home</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

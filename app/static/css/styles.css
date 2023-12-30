@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    /* max-width: 400px; */  
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -60,4 +60,46 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Custom styles */
+/* .card-deck {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.card {
+    margin-bottom: 20px;
+} */
+
+
+/* Add your custom styles here */
+.card-deck {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Optional: Hide scrollbar in IE and Edge */
+    scrollbar-width: thin; /* Optional: Customize scrollbar width in Firefox */
+}
+
+.card {
+    flex: 0 0 300px; /* Set the desired fixed width for each card */
+    margin-right: 15px; /* Add some margin between cards */
+    min-width: calc(33.3% - 30px);
+}
+
+/* Optional: Customize scrollbar style */
+.card-deck::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-deck::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+}
+
+.form-container {
+    max-width: 400px !important;
 }

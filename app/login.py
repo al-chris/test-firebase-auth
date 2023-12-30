@@ -19,6 +19,6 @@ def login():
 
         except Exception as e:
             print(e)
-            return 'Login failed.'
+            return render_template("error.html")
 
     return render_template('login.html')  # Create an HTML template for the login form

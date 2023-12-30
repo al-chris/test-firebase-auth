@@ -1,0 +1,20 @@
+body {
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    #sidebar {
+        position: fixed;
+        height: 100%;
+        width: 230px;
+        margin-top: 56px;
+    }
+
+    main {
+        margin-left: 230px;
+    }
+}

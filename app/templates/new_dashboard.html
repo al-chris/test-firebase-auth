@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Include custom styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Your Logo</a> -->
+        <a class="navbar-brand" href="#">
+            <img src="{{url_for('static', filename='download.png')}}" alt="Logo"  width="100" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="form-inline ml-auto">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search for cards" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="button">Search</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+    
+        <!-- Card Categories -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Featured Cards</h3>
+                <div class="card-deck overflow-auto" id="featured-cards">
+                    <!-- Featured Cards will be dynamically added here -->
+                    {% for i in range(8) %}
+                        <div class="card">
+                            <img src="{{url_for('static', filename='20231202_202619.jpg')}}" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Featured Card</h5>
+                                <p class="card-text">Card description goes here.</p>
+                                <p class="card-text">Slots: 2336/5000</p>
+                                <a href="#" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>New Arrivals</h3>
+                <div class="card-deck overflow-auto" id="new-arrivals">
+                    <!-- New Arrivals Cards will be dynamically added here -->
+                    {% for i in range(8) %}
+                        <div class="card">
+                            <img src="{{url_for('static', filename='20231202_184722.jpg')}}" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Featured Card</h5>
+                                <p class="card-text">Card description goes here.</p>
+                                <p class="card-text">Slots: 2336/5000</p>
+                                <a href="#" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Popular Cards</h3>
+                <div class="card-deck overflow-auto" id="popular-cards">
+                    <!-- Popular Cards will be dynamically added here -->
+                    {% for i in range(8) %}
+                        <div class="card">
+                            <img src="{{url_for('static', filename='20231202_184450.jpg')}}" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Featured Card</h5>
+                                <p class="card-text">Card description goes here.</p>
+                                <p class="card-text">Slots: 2336/5000</p>
+                                <a href="#" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Trending Cards</h3>
+                <div class="card-deck overflow-auto" id="trending-cards">
+                    <!-- Trending Cards will be dynamically added here -->
+                    
+                    {% for i in range(8) %}
+                        <div class="card">
+                            <img src="{{url_for('static', filename='20231202_184620.jpg')}}" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Featured Card</h5>
+                                <p class="card-text">Card description goes here.</p>
+                                <p class="card-text">Slots: 2336/5000</p>
+                                <a href="#" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and other dependencies if needed -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/lazy-load.js') }}"></script>
+</body>
+</html>
