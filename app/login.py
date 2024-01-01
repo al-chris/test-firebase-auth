@@ -1,5 +1,5 @@
 from app import app, auth
-from flask import request, render_template, session, redirect, url_for
+from flask import request, render_template, session, redirect, url_for, flash
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -15,10 +15,13 @@ def login():
             # Store user information in the session
             session['user'] = {'email': login['email'], 'uid': login['localId']}
 
+            # Flash a login message
+            flash(f"Welcome! {session['user']['email']}", "info")
+
             return redirect(url_for('home'))
 
         except Exception as e:
             print(e)
-            return render_template("error.html")
+            return redirect(url_for('error'))
 
     return render_template('login.html')  # Create an HTML template for the login form

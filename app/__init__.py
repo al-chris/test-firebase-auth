@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, session, redirect, url_for, request
+from functools import wraps
 
 import pyrebase
 
@@ -22,6 +23,16 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 
 auth = firebase.auth()
 db = firebase.database()
+
+
+def login_required(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        if 'user' not in session:
+            return redirect(url_for('login', next=request.url))
+        else:
+            return function()
+    return wrapper
 
 
 from app import views

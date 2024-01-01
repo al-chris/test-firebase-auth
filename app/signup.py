@@ -22,6 +22,6 @@ def signup():
 
         except Exception as e:
             print(e)
-            return render_template("error.html")
+            return redirect(url_for('error'))
 
     return render_template('signup.html')  # Create an HTML template for the signup form
