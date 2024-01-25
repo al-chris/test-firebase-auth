@@ -39,3 +39,4 @@ from app import views
 from app import signup
 from app import login
 from app import logout
+from app import google_login

@@ -90,6 +90,15 @@ a:hover {
     min-width: calc(33.3% - 30px);
 }
 
+.btn-google {
+    background-color: #4285F4;
+    color: white;
+}
+
+.btn-google i {
+    margin-right: 10px;
+}
+
 /* Optional: Customize scrollbar style */
 .card-deck::-webkit-scrollbar {
     width: 8px;
