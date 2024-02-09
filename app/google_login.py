@@ -1,7 +1,7 @@
 import os
 import pathlib
 import requests
-from flask import Flask, session, abort, redirect, request
+from flask import session, abort, redirect, request, jsonify
 from google.oauth2 import id_token
 from google_auth_oauthlib.flow import Flow
 from pip._vendor import cachecontrol
@@ -56,6 +56,7 @@ def google_login_callback():
 
     print(credentials._id_token)
     print(credentials.to_json())
+    print(jsonify(id_info))
     return id_info
 
 
