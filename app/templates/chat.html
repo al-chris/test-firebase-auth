@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat with User</h2>
+            <img src="{{ url_for('static', filename='user-avatar.jpg')}}" alt="User Avatar">
+        </div>
+
+        <div class="chat-messages">
+            <div class="chat-message received">Good afternoon</div>
+            <div class="chat-message sent">What can I do for you today?</div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="chat-message" placeholder="Type your message here">
+            <button id="send-button">&#10148</button>
+        </div>
+    </div>
+
+    <script>
+
+        window.addEventListener('resize', function() {
+            var chatInput = document.getElementById('chat-input');
+            if (window.innerWidth < 768) {
+                chatInput.style.bottom = '0';
+            } else {
+                chatInput.style.bottom = '';
+            }
+        })
+
+        const chatMessages = document.querySelector('.chat-messages');
+        const messageInput = document.querySelector('#chat-message');
+        const sendButton = document.querySelector('#send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                // Send the message to the server (replace with your server-side logic)
+                // ...
+
+                // Display the message on the chat interface
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('chat-message', 'sent');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+
+                messageInput.value = '';
+            }
+        });
+
+        // Fetch and display existing messages (replace with your server-side logic)
+        // ...
+
+    </script>
+</body>
+
+</html>

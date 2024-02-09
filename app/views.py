@@ -24,3 +24,8 @@ def landing():
 @app.route('/error')
 def error():
     return render_template('error.html')
+
+
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
