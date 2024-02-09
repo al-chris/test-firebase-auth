@@ -55,6 +55,7 @@ def google_login_callback():
     session["name"] = id_info.get("name")
 
     print(credentials._id_token)
+    print(credentials.to_json())
     return id_info
 
 
