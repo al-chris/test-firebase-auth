@@ -21,6 +21,19 @@ Flask-Moment==1.0.5
 Flask-RESTful==0.3.10
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
+gcloud==0.18.3
+google-api-core==2.15.0
+google-api-python-client==2.111.0
+google-auth==2.25.2
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.0.0
+google-cloud-core==2.4.1
+google-cloud-firestore==2.14.0
+google-cloud-storage==2.14.0
+google-crc32c==1.5.0
+google-pasta==0.2.0
+google-resumable-media==2.7.0
+googleapis-common-protos==1.62.0
 greenlet==3.0.3
 gunicorn==21.2.0
 idna==3.6
@@ -34,6 +47,7 @@ prompt-toolkit==3.0.43
 psycopg2==2.9.9
 pycountry==23.12.11
 PyJWT==2.8.0
+Pyrebase4==4.7.1
 python-dateutil==2.8.2
 python-slugify==8.0.3
 pytz==2023.4
